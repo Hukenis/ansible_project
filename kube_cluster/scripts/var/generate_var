@@ -1,0 +1,11 @@
+inventory=/ansible/Playbooks/k8s_deploy/_new.hosts
+token=`date +%Y%m%d%H%M%S | openssl sha256 |cut -d " " -f 2|cut -c 1-15`
+now=`date +%Y%m%d_$token`
+workdir=/opt/cert/$now
+etcd_workdir=$workdir/etcd
+kube_workdir=$workdir/k8s
+ansible_etcdfile=/ansible/Playbooks/k8s_deploy/roles/install_etcd
+ansible_kubefile=/ansible/Playbooks/k8s_deploy/roles/install_master
+ansible_nodefile=/ansible/Playbooks/k8s_deploy/roles/install_node
+history_var=/ansible/Playbooks/k8s_deploy/scripts/history
+script_dir=/ansible/Playbooks/k8s_deploy/scripts

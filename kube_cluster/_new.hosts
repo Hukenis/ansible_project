@@ -1,0 +1,13 @@
+[master]
+k8s-master-199   ansible_host=192.168.2.199 ansible_port=22 
+
+[node]
+k8s-node-200     ansible_host=192.168.2.200 ansible_port=22 
+
+[etcd]
+etcd-199         ansible_host=192.168.2.199 ansible_port=22 
+
+[all_cluster]
+cluster_199      ansible_host=192.168.2.199 ansible_port=22 
+cluster_200      ansible_host=192.168.2.200 ansible_port=22 
+

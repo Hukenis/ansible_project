@@ -1,0 +1,9 @@
+---
+# 声明： 目前仅适用于centos 7、8 包括Rocky 8、9 的红帽系OS
+- name: 初始化设备
+  hosts: all_cluster          # 执行清单，所有设备
+  remote_user: root   # 执行用户，root
+
+  roles:  # 执行哪些角色
+  - env_prepare
+  - kernel_upgrade  
