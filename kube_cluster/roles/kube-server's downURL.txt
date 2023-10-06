@@ -1,2 +1,0 @@
-用 wget下载此包，并给install_node中的file文件夹中解包拷贝一份kubelet、kubectl、kube-proxy
-https://cdn.dl.k8s.io/release/v1.20.4/kubernetes-server-linux-amd64.tar.gz
