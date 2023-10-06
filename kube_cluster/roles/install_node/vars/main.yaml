@@ -1,0 +1,21 @@
+k8s_certfiles:
+  - k8s_cert/kube-proxy-key.pem
+  - k8s_cert/kube-proxy.pem
+  - k8s_cert/ca.pem 
+k8s_package:
+  - kubectl  
+  - kubelet  
+  - kube-proxy
+k8s_workdirs:
+  - /opt/k8s/kubernetes/bin
+  - /opt/k8s/kubernetes/cfg
+  - /opt/k8s/kubernetes/ssl
+kubecfg_file:
+  - bootstrap.kubeconfig 
+  - kube-proxy.kubeconfig
+systemd_service:
+  - systemd_file/kubelet.service 
+  - systemd_file/kube-proxy.service
+service_name:
+  - kubelet
+  - kube-proxy

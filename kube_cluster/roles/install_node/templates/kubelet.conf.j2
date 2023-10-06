@@ -1,0 +1,8 @@
+KUBELET_OPTS="  \
+--v=2 \
+--hostname-override={{ansible_hostname}} \
+--kubeconfig=/opt/k8s/kubernetes/cfg/kubelet.kubeconfig \
+--bootstrap-kubeconfig=/opt/k8s/kubernetes/cfg/bootstrap.kubeconfig \
+--config=/opt/k8s/kubernetes/cfg/kubelet-config.yml \
+--cert-dir=/opt/k8s/kubernetes/ssl \
+--pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.6"

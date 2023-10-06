@@ -1,0 +1,10 @@
+---
+- name: assgin kubelet env_conf for system
+  template: 
+    src: kubelet.conf.j2
+    dest: /opt/k8s/kubernetes/cfg/kubelet.conf
+
+- name: assgin config for kubelet
+  copy: 
+    src: kubelet-config.yml 
+    dest: /opt/k8s/kubernetes/cfg/kubelet-config.yml

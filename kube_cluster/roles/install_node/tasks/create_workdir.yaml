@@ -1,0 +1,8 @@
+---
+- name: create workdir
+  file: 
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+  with_items:
+    - "{{ k8s_workdirs }}"

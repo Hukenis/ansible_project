@@ -1,0 +1,18 @@
+---
+- name: assgin service file
+  copy: 
+    src: "{{item}}"
+    dest: /usr/lib/systemd/system
+  with_items:
+    - "{{ systemd_service }}" 
+
+- name: systemd reload 
+  shell: systemctl daemon-reload
+
+- name: start up node
+  service: 
+    name: "{{item}}"
+    state: started
+    enabled: yes
+  with_items:
+    - "{{ service_name  }}"

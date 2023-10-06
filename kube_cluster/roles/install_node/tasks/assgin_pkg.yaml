@@ -1,0 +1,17 @@
+---
+- name: assgin k8s execfile
+  copy:
+    src: "{{ item }}"
+    dest: /opt/k8s/kubernetes/bin
+    mode: 0755
+  with_items:
+    - "{{ k8s_package }}"
+- name: create link file to bin
+  shell: ln -s /opt/k8s/kubernetes/bin/*   /usr/local/bin
+
+- name: assgin genreated  kubeconfig from master 
+  copy:
+    src: "{{item}}"
+    dest: /opt/k8s/kubernetes/cfg
+  with_items:
+    - "{{ kubecfg_file }}"

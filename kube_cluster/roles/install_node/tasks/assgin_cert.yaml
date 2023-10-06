@@ -1,0 +1,8 @@
+---
+- name: assgin k8s certfile
+  copy:
+    src: "{{ item }}"
+    dest:  /opt/k8s/kubernetes/ssl
+  with_items: 
+    - "{{ k8s_certfiles }}"
+

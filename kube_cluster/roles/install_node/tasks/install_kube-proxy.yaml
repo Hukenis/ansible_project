@@ -1,0 +1,10 @@
+---
+- name: assgin kube-proxy env_conf for systemd
+  copy:
+    src: kube-proxy.conf 
+    dest: /opt/k8s/kubernetes/cfg/kube-proxy.conf 
+
+- name: assgin config for kube-proxy
+  template: 
+    src: kube-proxy-config.yml.j2
+    dest: /opt/k8s/kubernetes/cfg/kube-proxy-config.yml

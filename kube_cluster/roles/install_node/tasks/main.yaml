@@ -1,0 +1,7 @@
+---
+- include: create_workdir.yaml 
+- include: assgin_cert.yaml  
+- include: assgin_pkg.yaml  
+- include: install_kubelet.yaml
+- include: install_kube-proxy.yaml
+- include: startup_node.yaml
