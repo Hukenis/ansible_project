@@ -1,0 +1,12 @@
+---
+- include: create_workdir.yaml
+- include: assgin_cert.yaml
+- include: assgin_pkg.yaml
+- include: install_apiserver.yaml
+- include: install_controllerMGR.yaml
+- include: install_scheduler.yaml 
+- include: generate_kubectl.yaml
+- include: install_tls_bootstrap.yaml 
+- include: startup_master.yaml
+- include: down_cni.yaml   
+- include: down_coredns.yaml   

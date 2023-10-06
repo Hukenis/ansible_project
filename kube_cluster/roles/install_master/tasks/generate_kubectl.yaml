@@ -1,0 +1,9 @@
+---
+- name: assgin configure script for kubectl
+  template:
+    src: script_file/generate_kubectl.sh
+    dest: /opt/tools/
+    mode: 0755
+- name: generate kubeconfig for kubectl
+  shell: . /opt/tools/generate_kubectl.sh
+  

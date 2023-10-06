@@ -1,0 +1,6 @@
+---
+- name: load apiserver configure
+  template: 
+    src: kube-apiserver.conf.j2
+    dest: "{{ workdir }}/cfg/kube-apiserver.conf"
+

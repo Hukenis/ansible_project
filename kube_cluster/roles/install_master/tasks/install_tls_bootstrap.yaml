@@ -1,0 +1,9 @@
+- name: create TLS token
+  copy: 
+    src: token.csv
+    dest: "{{ workdir }}/cfg/token.csv"
+- name: assgin Authorized bootstrap script
+  copy:
+    src: kubelet-bootstrap.sh
+    dest: /opt/tools/
+    mode: 0755 

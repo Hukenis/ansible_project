@@ -1,0 +1,37 @@
+---
+- name: assgin k8s package
+  copy:
+    src: "{{ k8s_package }}"
+    dest: /opt/source_package
+- name: uncompress pkg
+  unarchive:
+    src: "/opt/source_package/{{ k8s_package }}"
+    dest: /opt/source_package
+    copy: no
+- name: create k8s execfile 
+  shell: cp -rf /opt/source_package/kubernetes/server/bin/*  "{{ workdir }}/bin"
+- name: links execfile 
+  shell:  ln -s "{{ workdir }}"/bin/*  /usr/local/bin/
+
+- name: assigin bootstrap_kubecfg.sh.j2 scripts
+  template:
+    src:  bootstrap_kubecfg.sh.j2
+    dest: /opt/tools/bootstrap_kubecfg.sh
+    mode: 0755
+- name: assigin kube-proxy_kubecfg.sh.j2 scripts
+  template:
+    src:  kube-proxy_kubecfg.sh.j2
+    dest: /opt/tools/kube-proxy_kubecfg.sh
+    mode: 0755
+
+- name: assgin authorization_bootstrap.sh
+  copy:
+    src: authorization_bootstrap.sh
+    dest: /opt/tools
+    mode: 0755
+
+- name: assgin approve_node.sh
+  copy:
+    src: approve_node.sh
+    dest: /opt/tools
+    mode: 0755

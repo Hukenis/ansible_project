@@ -1,0 +1,12 @@
+---
+- name: load scheduler configure
+  copy: 
+    src: config_file/kube-scheduler.conf
+    dest: "{{workdir}}/cfg"
+- name: assgin configure script for scheduler
+  template: 
+    src: script_file/generate_scheduler.sh
+    dest: /opt/tools/
+    mode: 0755
+- name: generate kubeconfig for scheduler
+  shell: .  /opt/tools/generate_scheduler.sh

@@ -1,0 +1,31 @@
+---
+- name: assign api-server.service
+  copy:
+    src: systemd_file/kube-apiserver.service 
+    dest: /usr/lib/systemd/system/
+    mode: 0755
+ 
+- name: assign scheduler.service
+  copy:
+    src: systemd_file/kube-scheduler.service
+    dest: /usr/lib/systemd/system/
+    mode: 0755
+
+- name: assign controllMGR.service
+  copy:
+    src: systemd_file/kube-controller-manager.service
+    dest: /usr/lib/systemd/system/
+    mode: 0755
+
+- name: systemd service reload
+  shell: systemctl daemon-reload
+
+- name: startup all of master-service
+  service: 
+    name: "{{item}}"
+    state: started
+    enabled: yes
+  with_items:
+    - kube-apiserver
+    - kube-controller-manager
+    - kube-scheduler

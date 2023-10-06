@@ -1,0 +1,5 @@
+- name: download cni_plugin
+  template:
+    src: calico.yaml.j2
+    dest: /opt/k8s/kubernetes/cni/calico.yaml
+    mode: 0644

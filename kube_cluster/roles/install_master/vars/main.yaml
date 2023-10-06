@@ -1,0 +1,31 @@
+---
+workdir: /opt/k8s/kubernetes
+k8s_workdirs:
+  - /opt/k8s/kubernetes/bin
+  - /opt/k8s/kubernetes/cfg
+  - /opt/k8s/kubernetes/ssl
+  - /opt/k8s/kubernetes/cni
+  - /opt/k8s/kubernetes/coredns
+k8s_certfiles:
+  - k8s_cert/admin-key.pem
+  - k8s_cert/ca-key.pem  
+  - k8s_cert/k8s-key.pem  
+  - k8s_cert/kube-controller-manager-key.pem  
+  - k8s_cert/kube-proxy-key.pem 
+  - k8s_cert/kube-scheduler.pem
+  - k8s_cert/admin.pem      
+  - k8s_cert/ca.pem      
+  - k8s_cert/k8s.pem      
+  - k8s_cert/kube-controller-manager.pem    
+  - k8s_cert/kube-proxy.pem     
+  - k8s_cert/kube-scheduler-key.pem
+etcd_certfiles:
+  - etcd_cert/ca.pem
+  - etcd_cert/etcd.pem
+  - etcd_cert/etcd-key.pem
+k8s_package:  kubernetes-server-linux-amd64.tar.gz
+etcd_ssldir: /opt/k8s/etcd/ssl
+systemdfile_apiserver: systemd_file/kube-apiserver.service 
+systemdfile_scheduler: systemd_file/kube-scheduler.service
+systemdfile_controllerMGR: systemd_file/kube-controller-manager.service
+bootstrap_token: 0dd910b5a102a9ed74bb642bd499c03a

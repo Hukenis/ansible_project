@@ -1,0 +1,12 @@
+---
+- name: load controllerMGR configure
+  copy: 
+    src: config_file/kube-controller-manager.conf
+    dest: "{{workdir}}/cfg"
+- name: assgin configure script for controllerMGR
+  template: 
+    src: script_file/generate_controllerMGR.sh
+    dest: /opt/tools/
+    mode: 0755
+- name: generate kubeconfig for controllerMGR
+  shell: .  /opt/tools/generate_controllerMGR.sh

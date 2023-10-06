@@ -1,0 +1,14 @@
+---
+- name: create workdir
+  file: 
+    path: "{{ item }}"
+    state: directory
+    recurse: yes
+  with_items:
+    - "{{ k8s_workdirs }}"
+   
+- name: create etcdssl dir 
+  file: 
+    path: " {{etcd_ssldir}} "
+    state: directory
+    recurse: yes

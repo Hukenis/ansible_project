@@ -1,0 +1,6 @@
+---
+- name: agssin coredns yamlfile 
+  copy: 
+    src: coredns.yaml
+    dest: /opt/k8s/kubernetes/coredns/
+    mode: 0755
