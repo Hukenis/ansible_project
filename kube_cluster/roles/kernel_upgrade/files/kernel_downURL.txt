@@ -1,0 +1,4 @@
+https://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-devel-6.2.0-1.el7.elrepo.x86_64.rpm
+https://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-6.2.0-1.el7.elrepo.x86_64.rpm
+https://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-tools-6.2.0-1.el7.elrepo.x86_64.rpm
+https://elrepo.org/linux/kernel/el7/x86_64/RPMS/kernel-ml-tools-libs-6.2.0-1.el7.elrepo.x86_64.rpm
