@@ -1,0 +1,8 @@
+---
+  kernel_pkg:
+    - kernel-ml-6.2.0-1.el7.elrepo.x86_64.rpm
+    - kernel-ml-devel-6.2.0-1.el7.elrepo.x86_64.rpm
+    - kernel-ml-tools-6.2.0-1.el7.elrepo.x86_64.rpm
+    - kernel-ml-tools-libs-6.2.0-1.el7.elrepo.x86_64.rpm
+  dest_dir: '/opt/source_package/kernel/'
+  old_kernel: 'kernel-tools-*'

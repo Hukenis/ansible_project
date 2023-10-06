@@ -1,0 +1,25 @@
+---
+- name: display_task
+  debug: msg="安装内核"
+- name: load conf of sysctl
+  copy:
+    src: k8s.conf
+    dest: /etc/sysctl.d
+- name: load conf of ipvs
+  copy: 
+    src: ipvs.conf
+    dest: /etc/modules-load.d
+- name: down conf of limits
+  copy:
+    src: limits.conf
+    dest: /opt/tools
+- name: load  conf of limits
+  shell: ulimit -SHn 65535  && cat /opt/tools/limits.conf >>/etc/security/limits.conf
+- name: remove old kernel
+  shell: yum -y remove {{item}}
+  with_items:
+    - "{{old_kernel}}"
+- name: install new kernel
+  shell: cd {{dest_dir}} &&  yum -y install kernel-ml-*
+  notify:
+    - set_default_grub2

@@ -1,0 +1,4 @@
+---
+# - include_tasks: pkg_update.yaml
+- include_tasks: download_kernel.yaml
+- include_tasks: install_kernel.yaml

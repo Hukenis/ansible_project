@@ -1,0 +1,5 @@
+---
+- name: display_task
+  debug: msg="软件更新"
+- name: update pkg
+  shell: yum -y update --exclude=kernel*

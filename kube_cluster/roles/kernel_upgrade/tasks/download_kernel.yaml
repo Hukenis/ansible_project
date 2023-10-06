@@ -1,0 +1,9 @@
+---
+- name: create kernel dir
+  file: path={{ item }} state=directory recurse=yes
+  with_items:
+    - "{{ dest_dir }}"
+- name: download kernel pkg
+  copy: src={{ item }} dest={{ dest_dir  }}
+  with_items:
+    - "{{ kernel_pkg }}"
