@@ -1,0 +1,11 @@
+---
+- name: install epel
+  yum:
+   name: epel-release
+   state: latest
+- name: upgrade current pkg
+  shell: yum -y update --exclude=kernel* 
+- name: install base package
+  yum: 
+   name: ['wget', 'jq', 'psmisc', 'vim', 'net-tools', 'telnet', 'git', 'ntpdate', 'rsync', 'device-mapper-persistent-data', 'lvm2', 'ipvsadm', 'ipset', 'sysstat', 'conntrack', 'libseccomp']
+   state: latest

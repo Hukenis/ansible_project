@@ -1,0 +1,8 @@
+---
+- import_tasks: disable_firewalld.yaml 
+- import_tasks: disable_selinux.yaml
+- import_tasks: create_basedir.yaml 
+- import_tasks: assign_hosts.yaml  
+- import_tasks: ntpdate.yaml  
+- import_tasks: pkg_install.yaml
+- import_tasks: shutoff_swap.yaml

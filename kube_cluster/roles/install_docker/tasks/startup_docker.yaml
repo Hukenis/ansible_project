@@ -1,0 +1,12 @@
+---
+- name: create etc dir 
+  shell: mkdir -p /etc/docker
+- name: load daemon.json
+  copy:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+- name: startup docker
+  service:
+    name: docker
+    state: started
+    enabled: yes

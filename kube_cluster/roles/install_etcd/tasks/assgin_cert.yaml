@@ -1,0 +1,7 @@
+---
+- name: assgin cert of etcd 
+  copy:
+    src: "{{ item }}"
+    dest: /opt/k8s/etcd/ssl/
+  with_items:
+    - "{{ cert_files }}"

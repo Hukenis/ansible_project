@@ -1,0 +1,9 @@
+---
+- name: time of ntpdate
+  shell:  timedatectl set-timezone Asia/Shanghai && timedatectl status
+- name: crontab ntpdate
+  cron:
+    name: ntpdate time
+    minute: 5
+    job: /usr/sbin/ntpdate ntp1.aliyun.com
+    

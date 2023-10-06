@@ -1,0 +1,22 @@
+[Unit]
+Description=Etcd Server
+After=network.target
+After=network-online.target
+Wants=network-online.target
+ 
+[Service]
+Type=notify
+EnvironmentFile=/opt/k8s/etcd/cfg/etcd.conf
+ExecStart=/opt/k8s/etcd/bin/etcd \
+--cert-file=/opt/k8s/etcd/ssl/etcd.pem \
+--key-file=/opt/k8s/etcd/ssl/etcd-key.pem \
+--peer-cert-file=/opt/k8s/etcd/ssl/etcd.pem \
+--peer-key-file=/opt/k8s/etcd/ssl/etcd-key.pem \
+--trusted-ca-file=/opt/k8s/etcd/ssl/ca.pem \
+--peer-trusted-ca-file=/opt/k8s/etcd/ssl/ca.pem \
+--logger=zap
+Restart=on-failure
+LimitNOFILE=65536
+ 
+[Install]
+WantedBy=multi-user.target

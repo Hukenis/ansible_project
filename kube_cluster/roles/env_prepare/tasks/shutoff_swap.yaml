@@ -1,0 +1,5 @@
+---
+- name: shutoff swap
+  shell: swapoff -a && sysctl -w vm.swappiness=0
+- name: disabled swap
+  shell: sed -ri 's/.*swap.*/#&/' /etc/fstab

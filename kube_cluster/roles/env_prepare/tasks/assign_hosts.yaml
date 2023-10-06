@@ -1,0 +1,8 @@
+---
+- name: set cluster hosts
+  copy:
+    src: _hosts.txt 
+    dest: /opt/tools/
+- name: load hosts file 
+  shell: cat /opt/tools/_hosts.txt >>/etc/hosts
+   

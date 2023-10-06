@@ -1,0 +1,5 @@
+---
+- include: create_workdir.yaml
+- include: install_etcd.yaml  
+- include: assgin_cert.yaml
+- include: startup_etcd.yaml

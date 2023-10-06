@@ -1,0 +1,18 @@
+---
+- name: assign pkg
+  copy: 
+    src: etcd-v3.5.9-linux-amd64.tar.gz
+    dest: "{{ source_pkg_path }}"
+- name: uncompress pkg
+  unarchive:
+    src: /opt/source_package/etcd-v3.5.9-linux-amd64.tar.gz
+    dest: "{{ source_pkg_path }}"
+    copy: no
+- name: copy exec file 
+  shell: cp -fr  "{{ source_pkg_path }}"/etcd-v3.5.0-linux-amd64/*   "{{ work_home }}"/bin
+- name: links exec to bin
+  shell: ln -s  "{{ work_home }}"/bin/*  /usr/local/bin/
+- name: load etcd configure file 
+  template:
+    src: etcd.conf.j2
+    dest:  /opt/k8s/etcd/cfg/etcd.conf

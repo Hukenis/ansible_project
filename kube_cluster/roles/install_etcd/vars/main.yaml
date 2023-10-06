@@ -1,0 +1,12 @@
+---
+work_home: /opt/k8s/etcd
+etcd_workdirs:
+  - /opt/k8s/etcd/bin
+  - /opt/k8s/etcd/cfg
+  - /opt/k8s/etcd/ssl
+cert_files:
+  - etcd_cert/ca-key.pem  
+  - etcd_cert/ca.pem  
+  - etcd_cert/etcd-key.pem  
+  - etcd_cert/etcd.pem
+source_pkg_path: /opt/source_package

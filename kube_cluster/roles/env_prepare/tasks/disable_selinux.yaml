@@ -1,0 +1,5 @@
+---
+- name: stop selinux
+  shell: setenforce 0
+- name: disable selinux 
+  shell: sed -ri 's/SELINUX=enforcing/SELINUX=disabled/g'  /etc/selinux/config

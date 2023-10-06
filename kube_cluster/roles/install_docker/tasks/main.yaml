@@ -1,0 +1,4 @@
+---
+- include: load_repo.yaml
+- include: install_docker.yaml 
+- include: startup_docker.yaml

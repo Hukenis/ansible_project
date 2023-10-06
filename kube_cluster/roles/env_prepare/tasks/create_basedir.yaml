@@ -1,0 +1,4 @@
+---
+- name: create base dir
+  shell: mkdir -p /opt/{tools,scripts,source_package}
+
